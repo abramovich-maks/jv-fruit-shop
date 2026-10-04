@@ -22,11 +22,18 @@ public class DataParserCsvImpl implements DataParser {
 
     private FruitTransaction getFromCsv(String line) {
         String[] fields = line.split(CSV_SEPARATOR);
+        if (fields.length != 3) {
+            throw new RuntimeException("Invalid CSV line format. Expected 3 fields");
+        }
         FruitTransaction.Operation operation =
                 FruitTransaction.Operation.fromCode(fields[OPERATION_INDEX]);
+        int parsedQuantity = Integer.parseInt(fields[QUANTITY_INDEX]);
+        if (parsedQuantity < 0) {
+            throw new RuntimeException("Quantity don't can be negative");
+        }
         return new FruitTransaction()
                 .setOperation(operation)
                 .setFruit(fields[FRUIT_INDEX])
-                .setQuantity(Integer.parseInt(fields[QUANTITY_INDEX]));
+                .setQuantity(parsedQuantity);
     }
 }
