@@ -1,8 +1,8 @@
 package core.basesyntax.stratagy;
 
-import java.util.Map;
 import core.basesyntax.model.FruitTransaction;
 import core.basesyntax.storage.Storage;
+import java.util.Map;
 
 public class ReturnOperation implements OperationHandler {
     @Override

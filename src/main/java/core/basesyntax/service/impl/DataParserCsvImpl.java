@@ -1,9 +1,9 @@
 package core.basesyntax.service.impl;
 
-import java.util.List;
-import java.util.stream.Collectors;
 import core.basesyntax.model.FruitTransaction;
 import core.basesyntax.service.DataParser;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class DataParserCsvImpl implements DataParser {
     private static final String CSV_SEPARATOR = ",";
@@ -22,7 +22,8 @@ public class DataParserCsvImpl implements DataParser {
 
     private FruitTransaction getFromCsv(String line) {
         String[] fields = line.split(CSV_SEPARATOR);
-        FruitTransaction.Operation operation = FruitTransaction.Operation.fromCode(fields[OPERATION_INDEX]);
+        FruitTransaction.Operation operation =
+                FruitTransaction.Operation.fromCode(fields[OPERATION_INDEX]);
         return new FruitTransaction()
                 .setOperation(operation)
                 .setFruit(fields[FRUIT_INDEX])

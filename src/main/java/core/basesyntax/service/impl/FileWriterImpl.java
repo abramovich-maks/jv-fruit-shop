@@ -1,9 +1,8 @@
 package core.basesyntax.service.impl;
 
-
+import core.basesyntax.service.FileWriter;
 import java.io.BufferedWriter;
 import java.io.IOException;
-import core.basesyntax.service.FileWriter;
 
 public class FileWriterImpl implements FileWriter {
 

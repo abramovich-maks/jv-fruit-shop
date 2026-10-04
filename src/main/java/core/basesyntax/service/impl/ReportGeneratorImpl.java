@@ -1,8 +1,8 @@
 package core.basesyntax.service.impl;
 
-import java.util.Map;
 import core.basesyntax.service.ReportGenerator;
 import core.basesyntax.storage.Storage;
+import java.util.Map;
 
 public class ReportGeneratorImpl implements ReportGenerator {
     private static final String REPORT_HEADER = "fruit,quantity";
